@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FormTappableLinkTableViewCell" rowHeight="50" id="4So-oQ-AGg" customClass="FormTappableLinkTableViewCell" customModule="VTRFormBuilder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4So-oQ-AGg" id="0mM-ef-uMd">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gJ-XD-f5m">
+                        <rect key="frame" x="18" y="6.5" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="6gJ-XD-f5m" secondAttribute="height" multiplier="1:1" id="7v7-So-88Y"/>
+                            <constraint firstAttribute="height" constant="25" id="Ejg-FR-bUx"/>
+                        </constraints>
+                        <state key="normal" image="check_off"/>
+                        <connections>
+                            <action selector="checkboxDidTapped:" destination="4So-oQ-AGg" eventType="touchUpInside" id="c4z-iF-TU7"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-2Q-o2A">
+                        <rect key="frame" x="48" y="10" width="348" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTJ-91-NoX">
+                        <rect key="frame" x="18" y="30.5" width="378" height="14"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                        <color key="textColor" name="RedBlood"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6gJ-XD-f5m" firstAttribute="leading" secondItem="0mM-ef-uMd" secondAttribute="leading" constant="18" id="B0d-zE-f6K"/>
+                    <constraint firstItem="UMt-2Q-o2A" firstAttribute="trailing" secondItem="yTJ-91-NoX" secondAttribute="trailing" id="SJI-fn-j9L"/>
+                    <constraint firstItem="UMt-2Q-o2A" firstAttribute="centerY" secondItem="6gJ-XD-f5m" secondAttribute="centerY" id="V6B-AU-nGX"/>
+                    <constraint firstItem="UMt-2Q-o2A" firstAttribute="top" secondItem="0mM-ef-uMd" secondAttribute="top" constant="10" id="hlN-Ac-Cro"/>
+                    <constraint firstItem="UMt-2Q-o2A" firstAttribute="leading" secondItem="6gJ-XD-f5m" secondAttribute="trailing" constant="5" id="lUi-V4-dSs"/>
+                    <constraint firstAttribute="bottom" secondItem="yTJ-91-NoX" secondAttribute="bottom" constant="5.5" id="paY-ev-QXG"/>
+                    <constraint firstAttribute="trailing" secondItem="UMt-2Q-o2A" secondAttribute="trailing" constant="18" id="uYA-Wg-eHc"/>
+                    <constraint firstItem="yTJ-91-NoX" firstAttribute="top" secondItem="UMt-2Q-o2A" secondAttribute="bottom" constant="3" id="ulV-zh-npW"/>
+                    <constraint firstItem="yTJ-91-NoX" firstAttribute="leading" secondItem="6gJ-XD-f5m" secondAttribute="leading" id="zfc-pL-Drm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="checkboxButton" destination="6gJ-XD-f5m" id="8ac-vP-Wgb"/>
+                <outlet property="errorMessageLabel" destination="yTJ-91-NoX" id="sIG-HT-EXy"/>
+                <outlet property="linkLabel" destination="UMt-2Q-o2A" id="rty-49-aAd"/>
+            </connections>
+            <point key="canvasLocation" x="89.855072463768124" y="116.18303571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check_off" width="21" height="21"/>
+        <namedColor name="RedBlood">
+            <color red="0.72549019607843135" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
