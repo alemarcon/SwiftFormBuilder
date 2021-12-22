@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import VTRFormBuilder
+import SwiftFormBuilder
 
 class ViewController: UIViewController {
     

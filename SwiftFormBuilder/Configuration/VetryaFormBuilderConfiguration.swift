@@ -1,6 +1,6 @@
 //
-//  VetryaFormBuilderConfiguration.swift
-//  VTRFormBuilder
+//  SwiftFormBuilderConfiguration.swift
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 26/05/2021.
 //
@@ -15,12 +15,12 @@ public enum LogLevel:String {
     case verbose
 }
 
-public class VetryaConf {
+public class SwiftFormBuilderConf {
     /// Current application loglevel
     private var _logLevel: LogLevel = .verbose
     /// Singleton object for VetryaOAuthConf
-    static let shared: VetryaConf = VetryaConf()
-    /// Default VetryaOAuthConf initializer
+    static let shared: SwiftFormBuilderConf = SwiftFormBuilderConf()
+    /// Default SwiftFormBuilderConf initializer
     private init() { }
     
     /// Public var for framework loglevel

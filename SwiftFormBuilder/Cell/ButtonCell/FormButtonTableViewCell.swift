@@ -1,6 +1,6 @@
 //
 //  FormButtonTableViewCell.swift
-//  Supertennis
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 14/05/2021.
 //
@@ -9,7 +9,7 @@ import UIKit
 
 class FormButtonTableViewCell: UITableViewCell, FormConformity, FormValidator {
 
-    @IBOutlet weak var button: VetryaButton!
+    @IBOutlet weak var button: SwiftFormBuilderButton!
     @IBOutlet weak var buttonWidthConstraint: NSLayoutConstraint!
     
     //MARK: - Properties

@@ -1,6 +1,6 @@
 //
-//  VetryaTextField.swift
-//  VTRFormBuilder
+//  SwiftFormBuilderTextField.swift
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 26/05/2021.
 //
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-class VetryaTextField: UITextField {
+class SwiftFormBuilderTextField: UITextField {
     
     private var cornersSet: Bool = false
     

@@ -1,6 +1,6 @@
 //
 //  FormTextFieldTableViewCell.swift
-//  Supertennis
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 12/05/2021.
 //
@@ -10,7 +10,7 @@ import UIKit
 class FormTextFieldTableViewCell: UITableViewCell, FormConformity {
     
     @IBOutlet weak var nameTextfieldLabel: UILabel!
-    @IBOutlet weak var textField: VetryaTextField!
+    @IBOutlet weak var textField: SwiftFormBuilderTextField!
     @IBOutlet weak var errorTextfieldLabel: UILabel!
     
     var formItem: FormItem?

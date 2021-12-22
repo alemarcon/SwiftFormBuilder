@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D0CC6AF265FD57A008F2F42 /* VetryaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CC6AE265FD57A008F2F42 /* VetryaButton.swift */; };
+		2D0CC6AF265FD57A008F2F42 /* SwiftFormBuilderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CC6AE265FD57A008F2F42 /* SwiftFormBuilderButton.swift */; };
 		2D0CC6B3265FDCC4008F2F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D0CC6B2265FDCC4008F2F42 /* Assets.xcassets */; };
 		2D0CC6B7265FEAC7008F2F42 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CC6B6265FEAC7008F2F42 /* StringUtils.swift */; };
 		2D0CC6BD265FF8AB008F2F42 /* SeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0CC6BB265FF8AB008F2F42 /* SeparatorTableViewCell.swift */; };
@@ -41,7 +41,7 @@
 		2D321B5D26612B6300AF0A09 /* VTRPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D321B5C26612B6300AF0A09 /* VTRPasswordRule.swift */; };
 		2D321B612661338400AF0A09 /* FormItemPasswordProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D321B602661338400AF0A09 /* FormItemPasswordProperty.swift */; };
 		2D7229042660D1E9003B9579 /* VTRMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7229032660D1E9003B9579 /* VTRMessage.swift */; };
-		2DD0CCC9265EA50800C8DC3E /* VetryaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0CCC8265EA50800C8DC3E /* VetryaTextField.swift */; };
+		2DD0CCC9265EA50800C8DC3E /* SwiftFormBuilderTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0CCC8265EA50800C8DC3E /* SwiftFormBuilderTextField.swift */; };
 		2DD0CCCF265EA58200C8DC3E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0CCCE265EA58200C8DC3E /* Logger.swift */; };
 		2DD0CCD2265EA5C800C8DC3E /* VetryaFormBuilderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0CCD1265EA5C800C8DC3E /* VetryaFormBuilderConfiguration.swift */; };
 		2DD0CCD7265EA71000C8DC3E /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0CCD6265EA71000C8DC3E /* UITextField+Extension.swift */; };
@@ -59,7 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D0CC6AE265FD57A008F2F42 /* VetryaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetryaButton.swift; sourceTree = "<group>"; };
+		2D0CC6AE265FD57A008F2F42 /* SwiftFormBuilderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFormBuilderButton.swift; sourceTree = "<group>"; };
 		2D0CC6B2265FDCC4008F2F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D0CC6B6265FEAC7008F2F42 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		2D0CC6BB265FF8AB008F2F42 /* SeparatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		2D321B5C26612B6300AF0A09 /* VTRPasswordRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTRPasswordRule.swift; sourceTree = "<group>"; };
 		2D321B602661338400AF0A09 /* FormItemPasswordProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemPasswordProperty.swift; sourceTree = "<group>"; };
 		2D7229032660D1E9003B9579 /* VTRMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VTRMessage.swift; sourceTree = "<group>"; };
-		2DD0CCC8265EA50800C8DC3E /* VetryaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetryaTextField.swift; sourceTree = "<group>"; };
+		2DD0CCC8265EA50800C8DC3E /* SwiftFormBuilderTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFormBuilderTextField.swift; sourceTree = "<group>"; };
 		2DD0CCCE265EA58200C8DC3E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2DD0CCD1265EA5C800C8DC3E /* VetryaFormBuilderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VetryaFormBuilderConfiguration.swift; sourceTree = "<group>"; };
 		2DD0CCD6265EA71000C8DC3E /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -318,8 +318,8 @@
 		2DD0CCC7265EA4DA00C8DC3E /* Designable */ = {
 			isa = PBXGroup;
 			children = (
-				2DD0CCC8265EA50800C8DC3E /* VetryaTextField.swift */,
-				2D0CC6AE265FD57A008F2F42 /* VetryaButton.swift */,
+				2DD0CCC8265EA50800C8DC3E /* SwiftFormBuilderTextField.swift */,
+				2D0CC6AE265FD57A008F2F42 /* SwiftFormBuilderButton.swift */,
 			);
 			path = Designable;
 			sourceTree = "<group>";
@@ -503,9 +503,9 @@
 				2D110C742652FDF300F7EB4F /* FormLabelledTableViewCell.swift in Sources */,
 				2DD0CCDB265EA74200C8DC3E /* String+Extension.swift in Sources */,
 				2D0CC6B7265FEAC7008F2F42 /* StringUtils.swift in Sources */,
-				2DD0CCC9265EA50800C8DC3E /* VetryaTextField.swift in Sources */,
+				2DD0CCC9265EA50800C8DC3E /* SwiftFormBuilderTextField.swift in Sources */,
 				2D110CA42652FE6400F7EB4F /* FormConformity.swift in Sources */,
-				2D0CC6AF265FD57A008F2F42 /* VetryaButton.swift in Sources */,
+				2D0CC6AF265FD57A008F2F42 /* SwiftFormBuilderButton.swift in Sources */,
 				2DD0CCDE265EA80A00C8DC3E /* UIColor+Extension.swift in Sources */,
 				2D110C642652FDDA00F7EB4F /* FormButtonTableViewCell.swift in Sources */,
 				2D321B612661338400AF0A09 /* FormItemPasswordProperty.swift in Sources */,

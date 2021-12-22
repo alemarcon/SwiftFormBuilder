@@ -1,6 +1,6 @@
 //
-//  VetryaButton.swift
-//  VTRFormBuilder
+//  SwiftFormBuilderButton.swift
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 27/05/2021.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable class VetryaButton: UIButton {
+@IBDesignable class SwiftFormBuilderButton: UIButton {
     
     private var cornersSet: Bool = false
     
@@ -19,21 +19,21 @@ import UIKit
         updateBorder()
     }
     
-    /// <#Description#>    
+    /// Radius size
     @IBInspectable var roundedRadius: CGFloat = 0.0 {
         didSet {
             updateCornerRadius()
         }
     }
     
-    /// <#Description#>
+    /// True if has shadows, false otherwise
     @IBInspectable var shadow: Bool = false {
         didSet {
             updateShadow()
         }
     }
     
-    /// <#Description#>
+    /// Update corner radius
     private func updateCornerRadius() {
         if !cornersSet {
             cornersSet = true
@@ -41,7 +41,7 @@ import UIKit
         }
     }
     
-    /// <#Description#>
+    /// Update shadow
     func updateShadow() {
         if( shadow ) {
             layer.shadowColor = UIColor.black.cgColor

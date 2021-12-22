@@ -1,6 +1,6 @@
 //
 //  FormDateTableViewCell.swift
-//  Supertennis
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 13/05/2021.
 //
@@ -10,7 +10,7 @@ import UIKit
 class FormDateTableViewCell: UITableViewCell, FormConformity {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var dateTextField: VetryaTextField!
+    @IBOutlet weak var dateTextField: SwiftFormBuilderTextField!
     @IBOutlet weak var errorLabel: UILabel!
     
     //MARK: - Cell Properties

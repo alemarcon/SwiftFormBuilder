@@ -1,6 +1,6 @@
 //
 //  FormPickerTableViewCell.swift
-//  Supertennis
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 13/05/2021.
 //
@@ -21,7 +21,7 @@ public class FormPickerTableViewCell: UITableViewCell, FormConformity {
 
     //MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var valueTextField: VetryaTextField!
+    @IBOutlet weak var valueTextField: SwiftFormBuilderTextField!
     @IBOutlet weak var errorLabel: UILabel!
     
     //MARK: - Properties
