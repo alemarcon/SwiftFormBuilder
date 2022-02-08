@@ -1,10 +1,10 @@
-![form-builder-logo]
+# Swift Form Builder
 
 ![swift](https://img.shields.io/badge/Swift-5.0-orange) ![target](https://img.shields.io/badge/Target-iOS%2013-brightgreen) ![platform](https://img.shields.io/badge/Platform-iOS%20%7C%20padOS-blue)  
 
 # Introduzione
 
-SwiftFormBuilder è un framework ad uso interno Vetrya per la creazione di form dinamici. Questi form, utilizzati soprattutto nelle fasi di registrazione delle app, sono altamente personalizzabili
+SwiftFormBuilder è un framework per la creazione di form dinamici. Questi form, utilizzati soprattutto nelle fasi di registrazione delle app, sono altamente personalizzabili
 
 SwiftFormBuilder permette di:
 - Creare da codice dinamicamente un form per l'inserimento dei dati;
@@ -84,7 +84,7 @@ Nel tab *General*, scorrere fino a *Frameworks, Libraries, and Embedded Content*
 Per creare un form, sarà sufficiente inserire nel nostro view controller una table view, l'elemento sul quale sono costruiti gli item, e instanziare un oggetto di tipo FormBuilder. A questo va passato l'array di items che deve essere visualizzato e successivamente avviare il load dei campi. Di seguito un esempio della costruzione di un form con un solo campo.
 
 ```Swift
-import VTRFormBuilder
+import SFBFormBuilder
 
 class ViewController: UIViewController {
     
@@ -126,7 +126,7 @@ class ViewController: UIViewController {
 }
 ```
 
-# Esploriamo VetryaFormBuilder
+# Esploriamo SwiftFormBuilder
 
 La libreria permette di generare vari tipi di form item, e per ognuno di essi c'è la possibilità di personalizzare il comportamento e l'aspetto. Questi sono gli items che si possono creare:
 
@@ -220,8 +220,8 @@ policy.isAccepted = false
 policy.isRequired = true
 
 let linkItem = FormItem(named: "linkItem", valueType: .checkbox)
-    .title("Collegati su vetrya web site", underlined: "vetrya web site")
-    .link( URL(string: "https://www.vetrya.com/it") )
+    .title("Collegati su google.it", underlined: "google.it")
+    .link( URL(string: "https://www.google.com") )
     .isMandatory(policy.isRequired)
     .policy(policy)
     .uiProperties(
@@ -546,11 +546,11 @@ public enum FormItemCellType {
 }
 ```
 
-# VetryaFormBuilder messaggi di errore
+# SwiftFormBuilder messaggi di errore
 
 Quando un form item viene marcato come obbligatorio, in automatico si avvia la gestione dei messaggi di errore che possono essere visualizzati in fase di validazione del form. Il builder prevede dei messaggi standard ma questi possono essere personalizzati con dei messaggi custom.
 
-## VTRMessage
+## SFBMessage
 
 È la classe che gestisce i messaggi di errore visualizzati in fase di validazione non andata a buon fine. Sono visualizzati sotto i vari item come una stringa rossa. I messaggi gestiti sono:
 
@@ -571,7 +571,7 @@ Quando un form item viene marcato come obbligatorio, in automatico si avvia la g
 Un form item obbligatorio (isMandatory) se non valorizzato in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è **Il campo è obbligatorio**. Per customizzare:
 
 ```Swift
-VTRMessage.mandatoryError = "Il mio messaggio custom"
+SFBMessage.mandatoryError = "Il mio messaggio custom"
 ```
 
 ### Valore diverso da Stringa
@@ -579,7 +579,7 @@ VTRMessage.mandatoryError = "Il mio messaggio custom"
 Un form item in cui si è associato un valore di tipo stringa ma che viene valorizzato con un tipo di valore diverso, in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è **Il valore deve essere una stringa**. Per customizzare:
 
 ```Swift
-VTRMessage.stringValueNotFoundError = "Il mio messaggio custom"
+SFBMessage.stringValueNotFoundError = "Il mio messaggio custom"
 ```
 
 ### Dependency item vuoto
@@ -587,7 +587,7 @@ VTRMessage.stringValueNotFoundError = "Il mio messaggio custom"
 Un form item che ha una dipendenza di tipo **fill** con un secondo secondo form item che non viene valorizzato, in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è **Il campo \(FIELD_NAME) deve essere valorizzato** (dove FIELD_NAME viene sostituito con il valore **title** dell'item dipendente). Per customizzare:
 
 ```Swift
-VTRMessage.dependecyUnfilledError = "Il mio messaggio custom"
+SFBMessage.dependecyUnfilledError = "Il mio messaggio custom"
 ```
 
 ### Dependency item valore diverso
@@ -595,7 +595,7 @@ VTRMessage.dependecyUnfilledError = "Il mio messaggio custom"
 Un form item che ha una dipendenza di tipo **equal** con un secondo secondo form item che non viene valorizzato o che viene valorizzato con un valore diverso, in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è **Il valore non coincide con \(FIELD_NAME)** (dove FIELD_NAME viene sostituito con il valore **title** dell'item dipendente). Per customizzare:
 
 ```Swift
-VTRMessage.dependecyUnmatchError = "Il mio messaggio custom"
+SFBMessage.dependecyUnmatchError = "Il mio messaggio custom"
 ```
 
 ### Dependency item indefinito
@@ -603,7 +603,7 @@ VTRMessage.dependecyUnmatchError = "Il mio messaggio custom"
 Un form item che ha una dipendenza di tipo indefinito (per errore durante la creazione del form) con un secondo secondo form item, in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è **Il campo ha una dipendenza ma di tipo indefinito**. Per customizzare:
 
 ```Swift
-VTRMessage.undefinedDependecyError = "Il mio messaggio custom"
+SFBMessage.undefinedDependecyError = "Il mio messaggio custom"
 ```
 
 ### Controllo valore inserito
@@ -611,7 +611,7 @@ VTRMessage.undefinedDependecyError = "Il mio messaggio custom"
 Un form item che ha un valore errato, o comunque diverso da quello che ci si aspetta di trovare, in fase di validazione genera un errore. Un esempio, potrebbe essere che in un campo di tipo **firstname** siano stati inseriti solo numeri. Il messaggio di default che viene visualizzato è **Controlla il valore inserito**. Per customizzare:
 
 ```Swift
-VTRMessage.checkValueError = "Il mio messaggio custom"
+SFBMessage.checkValueError = "Il mio messaggio custom"
 ```
 
 ### E-mail non valida
@@ -619,7 +619,7 @@ VTRMessage.checkValueError = "Il mio messaggio custom"
 Un form item di tipo e-mail che contiene un valore errato (una mail non completa sintatticamente), in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è **E-mail non valida**. Per customizzare:
 
 ```Swift
-VTRMessage.invalidMailError = "Il mio messaggio custom"
+SFBMessage.invalidMailError = "Il mio messaggio custom"
 ```
 
 ### Password non valida
@@ -627,7 +627,7 @@ VTRMessage.invalidMailError = "Il mio messaggio custom"
 Un form item di tipo password che contiene un valore non conforme alle regole stabilite numero minimo e massimo di caratteri, presenza o meno di lettere maiuscole e minuscole, numeri, caratteri e speciali, in fase di validazione genera un errore. Il messaggio di default che viene visualizzato è composto dalle regole attive o meno specificate. Per customizzare:
 
 ```Swift
-VTRMessage.invalidPasswordError = "Il mio messaggio custom"
+SFBMessage.invalidPasswordError = "Il mio messaggio custom"
 ```
 
 ### Unmatched password
@@ -635,7 +635,7 @@ VTRMessage.invalidPasswordError = "Il mio messaggio custom"
 Un form item di tipo conferma password che contiene un valore non uguale a quello del campo password, in fase di validazione genera un messaggio di errore. Il messaggio di default che viene visualizzato è **Le password non coincidono**. Per customizzare:
 
 ```Swift
-VTRMessage.unmatchPasswordError = "Il mio messaggio custom"
+SFBMessage.unmatchPasswordError = "Il mio messaggio custom"
 ```
 
 ### Codice fiscale non valido
@@ -643,7 +643,7 @@ VTRMessage.unmatchPasswordError = "Il mio messaggio custom"
 Un form item di tipo codice fiscale che contiene un valore errato (errore di tipo sintattico), in fase di validazione genera un messaggio di errore. Il messaggio di default che viene visualizzato è **Codice fiscale non valido**. Per customizzare:
 
 ```Swift
-VTRMessage.invalidFiscalCodeError = "Il mio messaggio custom"
+SFBMessage.invalidFiscalCodeError = "Il mio messaggio custom"
 ```
 
 ### Telefono non valido
@@ -651,11 +651,11 @@ VTRMessage.invalidFiscalCodeError = "Il mio messaggio custom"
 Un form item di tipo phone number che contiene un valore errato (errore di tipo sintattico), in fase di validazione genera un messaggio di errore. Il messaggio di default che viene visualizzato è **Numero di telefono non valido**. Per customizzare:
 
 ```Swift
-VTRMessage.invalidPhoneNumberError = "Il mio messaggio custom"
+SFBMessage.invalidPhoneNumberError = "Il mio messaggio custom"
 ```
 
-# VetryaFormBuilder console logging
-VetryaFormBuilder genera dei log in console per decodificare le operazioni fatte. I livelli di log sono 2:
+# SwiftFormBuilder console logging
+SwiftFormBuilder genera dei log in console per decodificare le operazioni fatte. I livelli di log sono 2:
 - verbose
 - warning  
 
@@ -664,7 +664,7 @@ Di default la modalità predefinita è **verbose** che stampa tutti i log sulla 
 ```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    VetryaConf.logLevel = .verbose
+    SwiftFormBuilderConf.logLevel = .verbose
     return true
 }
 ````

@@ -1,6 +1,6 @@
 //
 //  VTRMessageConfig.swift
-//  VTRFormBuilder
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 28/05/2021.
 //
@@ -12,7 +12,7 @@ public class SFBMessage {
     public static let FIELD_NAME = "$FIELD_NAME$"
     
     //MARK: - Public instance
-    /// Singleton object for VetryaOAuthConf
+    /// Singleton object for SFBMessage
     static let shared: SFBMessage = SFBMessage()
     
     //MARK: - Private properties
@@ -33,14 +33,14 @@ public class SFBMessage {
     /// Message showed in case of unmatched password fields.ì
     private var _unmatchPasswordErrorMessage: String = "Le password non coincidono"
     /// Message showed in case of unmatched password fields.
-    private var _invalidPasswordErrorMessage: String = "La password deve essere compresa tra \(VTRPasswordRule.minLength) e \(VTRPasswordRule.maxLength) caratteri \(VTRPasswordRule.needLowercasedLetter ? "un carattere minuscolo" : "") \(VTRPasswordRule.needLowercasedLetter ? "un carattere maiuscolo" : "") \(VTRPasswordRule.needSpecialChar ? "un carattere speciale" : "") \(VTRPasswordRule.needNumber ? "un numero" : "")"
+    private var _invalidPasswordErrorMessage: String = "La password deve essere compresa tra \(SFBPasswordRule.minLength) e \(SFBPasswordRule.maxLength) caratteri \(SFBPasswordRule.needLowercasedLetter ? "un carattere minuscolo" : "") \(SFBPasswordRule.needLowercasedLetter ? "un carattere maiuscolo" : "") \(SFBPasswordRule.needSpecialChar ? "un carattere speciale" : "") \(SFBPasswordRule.needNumber ? "un numero" : "")"
     /// Message showed in case of invalid fiscal code fields.
     private var _invalidFiscalCodeErrorMessage: String = "Codice fiscale non valido"
     /// Message showed in case of invalid phone number fields.
     private var _invalidPhoneNumberErrorMessage: String = "Numero di telefono non valido"
     
     //MARK: - Initializer
-    /// Default VetryaOAuthConf initializer
+    /// Default SFBMessage initializer
     private init() { }
     
     //MARK: - Public properties

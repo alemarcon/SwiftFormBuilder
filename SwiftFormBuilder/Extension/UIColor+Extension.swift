@@ -1,6 +1,6 @@
 //
 //  UIColor+Extension.swift
-//  VTRFormBuilder
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 26/05/2021.
 //
@@ -49,7 +49,7 @@ extension UIColor {
         }
     }
     
-    struct VetryaColor {
+    struct SFBColor {
         static let white40 = UIColor(hexString: "FFFFFF", customAlpha: 0.4)
         static let lightGrey = UIColor(hexString: "C6C6C6")
     }

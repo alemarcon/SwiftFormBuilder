@@ -17,11 +17,14 @@ class FormCheckboxTableViewCell: UITableViewCell, FormConformity, FormValidator 
     var delegate: FormValidatorDelegate?
     static var NIB_NAME = "FormCheckboxTableViewCell"
     
-    private var checkOn = UIImage(named: "check_on")
-    private var checkOff = UIImage(named: "check_off")
+    private var checkOn: UIImage!
+    private var checkOff: UIImage!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        let bundle = Bundle(for: FormCheckboxTableViewCell.classForCoder())
+        checkOn = UIImage(named: "check_on", in: bundle, compatibleWith: nil)
+        checkOff = UIImage(named: "check_off", in: bundle, compatibleWith: nil)
     }
     
     

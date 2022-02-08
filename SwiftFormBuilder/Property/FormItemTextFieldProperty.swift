@@ -1,6 +1,6 @@
 //
 //  TextFieldProperty.swift
-//  VTRFormBuilder
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 26/05/2021.
 //
@@ -87,7 +87,7 @@ public class FormItemTextFieldProperty {
     /// The textfield border radius. If zero or negative border radius will not be applied
     private var cornerRadius: CGFloat = .zero
     /// The textfield placeholder color. If not setted, a black color will be returned
-    private var placeholderColor: UIColor? = UIColor.VetryaColor.lightGrey
+    private var placeholderColor: UIColor? = UIColor.SFBColor.lightGrey
     /// Empty space on the left side of textfield
     private var leftPaggind: LeftPadding = .minimum
     

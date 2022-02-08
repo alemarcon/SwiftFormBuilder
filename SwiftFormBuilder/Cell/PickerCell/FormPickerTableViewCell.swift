@@ -153,7 +153,7 @@ extension FormPickerTableViewCell: FormUpdatable {
                 
                 valueTextField.attributedPlaceholder = NSAttributedString(
                     string: formItem.getPlaceholder() ?? "",
-                    attributes: [NSAttributedString.Key.foregroundColor: formItem.getUIProperties().getTextfieldProperty()?.getPlaceholderColor() ?? UIColor.VetryaColor.lightGrey]
+                    attributes: [NSAttributedString.Key.foregroundColor: formItem.getUIProperties().getTextfieldProperty()?.getPlaceholderColor() ?? UIColor.SFBColor.lightGrey]
                 )
                 
                 valueTextField.keyboardType = formItem.getUIProperties().getKeyboardType()

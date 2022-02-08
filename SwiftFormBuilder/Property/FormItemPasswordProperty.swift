@@ -1,6 +1,6 @@
 //
 //  FormItemPasswordProperty.swift
-//  VTRFormBuilder
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 28/05/2021.
 //
@@ -11,17 +11,17 @@ public class FormItemPasswordProperty {
     
     //MARK: - Properties
     /// Element tint color
-    private var _minLength: Int = VTRPasswordRule.minLength
+    private var _minLength: Int = SFBPasswordRule.minLength
     /// Make field active or not
-    private var _maxLength: Int = VTRPasswordRule.maxLength
+    private var _maxLength: Int = SFBPasswordRule.maxLength
     /// Button title color
-    private var _uppercased: Bool = VTRPasswordRule.needUppercasedLetter
+    private var _uppercased: Bool = SFBPasswordRule.needUppercasedLetter
     /// Button corner radius
-    private var _lowercased: Bool = VTRPasswordRule.needLowercasedLetter
+    private var _lowercased: Bool = SFBPasswordRule.needLowercasedLetter
     /// Button border color
-    private var _specialChars: Bool = VTRPasswordRule.needSpecialChar
+    private var _specialChars: Bool = SFBPasswordRule.needSpecialChar
     /// Button border width
-    private var _numbers: Bool = VTRPasswordRule.needNumber
+    private var _numbers: Bool = SFBPasswordRule.needNumber
     
     public init() { }
     
@@ -29,7 +29,7 @@ public class FormItemPasswordProperty {
     /// - Parameter value:
     /// - Returns:
     public func minLength(_ value: Int) -> FormItemPasswordProperty {
-        VTRPasswordRule.minLength = value
+        SFBPasswordRule.minLength = value
         return self
     }
     
@@ -37,7 +37,7 @@ public class FormItemPasswordProperty {
     /// - Parameter value:
     /// - Returns:
     public func maxLength(_ value: Int) -> FormItemPasswordProperty {
-        VTRPasswordRule.maxLength = value
+        SFBPasswordRule.maxLength = value
         return self
     }
     
@@ -46,7 +46,7 @@ public class FormItemPasswordProperty {
     /// - Returns:
     public func needUppercasedLetters(_ value: Bool) -> FormItemPasswordProperty {
         self._uppercased = value
-        VTRPasswordRule.needUppercasedLetter = value
+        SFBPasswordRule.needUppercasedLetter = value
         return self
     }
     
@@ -55,7 +55,7 @@ public class FormItemPasswordProperty {
     /// - Returns:
     public func needLowercasedLetters(_ value: Bool) -> FormItemPasswordProperty {
         self._lowercased = value
-        VTRPasswordRule.needLowercasedLetter = value
+        SFBPasswordRule.needLowercasedLetter = value
         return self
     }
     
@@ -64,7 +64,7 @@ public class FormItemPasswordProperty {
     /// - Returns: 
     public func needSpecialChars(_ value: Bool) -> FormItemPasswordProperty {
         self._specialChars = value
-        VTRPasswordRule.needSpecialChar = value
+        SFBPasswordRule.needSpecialChar = value
         return self
     }
     
@@ -73,7 +73,7 @@ public class FormItemPasswordProperty {
     /// - Returns: 
     public func needNumber(_ value: Bool) -> FormItemPasswordProperty {
         self._numbers = value
-        VTRPasswordRule.needNumber = value
+        SFBPasswordRule.needNumber = value
         return self
     }
 

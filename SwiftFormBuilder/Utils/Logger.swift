@@ -12,10 +12,10 @@ class Logger {
     static func print(level: LogLevel, _ text: String) {
         switch SwiftFormBuilderConf.logLevel {
         case .verbose:
-            Swift.print("[VTRFormBuilder - \(level.rawValue.uppercased())] \(text)")
+            Swift.print("[SwiftFormBuilder - \(level.rawValue.uppercased())] \(text)")
         case .warning:
             if level == .warning {
-                Swift.print("[VTRFormBuilder - \(level.rawValue.uppercased())] \(text)")
+                Swift.print("[SwiftFormBuilder - \(level.rawValue.uppercased())] \(text)")
             }
         }
     }

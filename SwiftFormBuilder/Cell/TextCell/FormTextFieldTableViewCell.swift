@@ -70,7 +70,7 @@ extension FormTextFieldTableViewCell: FormUpdatable {
             if( !isUIConfigured ) {
                 // Configure textfield UI properties
                 textField.keyboardType = formItem.getUIProperties().getKeyboardType()
-                textField.attributedPlaceholder = NSAttributedString(string: formItem.getPlaceholder() ?? "", attributes: [NSAttributedString.Key.foregroundColor: formItem.getUIProperties().getTextfieldProperty()?.getPlaceholderColor() ?? UIColor.VetryaColor.lightGrey])
+                textField.attributedPlaceholder = NSAttributedString(string: formItem.getPlaceholder() ?? "", attributes: [NSAttributedString.Key.foregroundColor: formItem.getUIProperties().getTextfieldProperty()?.getPlaceholderColor() ?? UIColor.SFBColor.lightGrey])
                 textField.tintColor = formItem.getUIProperties().getTintColor()
                 
                 if let textfieldProperty = formItem.getUIProperties().getTextfieldProperty() {

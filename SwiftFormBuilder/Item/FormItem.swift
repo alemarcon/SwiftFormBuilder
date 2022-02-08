@@ -371,7 +371,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -379,12 +379,12 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory && textValue.isEmpty ) {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-            return(false, VTRMessage.mandatoryError)
+            return(false, SFBMessage.mandatoryError)
         } else {
             return(true, nil)
         }
@@ -399,7 +399,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -407,13 +407,13 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory ) {
             if( textValue.isEmpty ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 if( textValue.isValidFirstLastName() ) {
                     
@@ -422,7 +422,7 @@ public class FormItem {
                         if( dependency.getType() == .fill ) {
                             if( dependency.getDependencyItem().getValue() == nil ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                                return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
+                                return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
                             } else {
                                 return(true, nil)
                             }
@@ -433,31 +433,31 @@ public class FormItem {
                             if let field = dependency.getDependencyItem().getValue() as? String {
                                 if( textValue != field ) {
                                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                    return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
+                                    return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
                                 } else {
                                     return(true, nil)
                                 }
                             } else {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
+                                return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
                             }
                         }
                         
                         Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                        return(false, VTRMessage.undefinedDependecyError)
+                        return(false, SFBMessage.undefinedDependecyError)
                     } else {
                         return(true, nil)
                     }
                     
                 } else {
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid first ot last name value -> \(currentItemValue)")
-                    return(false, VTRMessage.checkValueError)
+                    return(false, SFBMessage.checkValueError)
                 }
             }
         } else {
             if( !textValue.isEmpty && !textValue.isValidFirstLastName() ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid first ot last name value -> \(currentItemValue)")
-                return(false, VTRMessage.checkValueError)
+                return(false, SFBMessage.checkValueError)
             } else {
                 return(true, nil)
             }
@@ -472,7 +472,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -480,13 +480,13 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory ) {
             if( textValue.isEmpty ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 if( textValue.isValidEmailAddress() ) {
                     
@@ -495,7 +495,7 @@ public class FormItem {
                         if( dependency.getType() == .fill ) {
                             if( dependency.getDependencyItem().getValue() == nil ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                                return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
+                                return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
                             } else {
                                 return(true, nil)
                             }
@@ -506,31 +506,31 @@ public class FormItem {
                             if let field = dependency.getDependencyItem().getValue() as? String {
                                 if( textValue != field ) {
                                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                    return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
+                                    return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
                                 } else {
                                     return(true, nil)
                                 }
                             } else {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
+                                return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-") )
                             }
                         }
                         
                         Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                        return(false, VTRMessage.undefinedDependecyError)
+                        return(false, SFBMessage.undefinedDependecyError)
                     } else {
                         return(true, nil)
                     }
                     
                 } else {
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid email -> \(currentItemValue)")
-                    return(false, VTRMessage.invalidMailError)
+                    return(false, SFBMessage.invalidMailError)
                 }
             }
         } else {
             if( !textValue.isEmpty && !textValue.isValidEmailAddress() ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid email value -> \(currentItemValue)")
-                return(false, VTRMessage.invalidMailError)
+                return(false, SFBMessage.invalidMailError)
             } else {
                 return(true, nil)
             }
@@ -545,7 +545,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -553,12 +553,12 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( textValue.isEmpty ) {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-            return(false, VTRMessage.mandatoryError)
+            return(false, SFBMessage.mandatoryError)
         } else {
             if( textValue.isValidPassword() ) {
                 if let dependency = dependence {
@@ -566,7 +566,7 @@ public class FormItem {
                     if( dependency.getType() == .fill ) {
                         if( dependency.getDependencyItem().getValue() == nil ) {
                             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                            return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                            return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                         } else {
                             return(true, nil)
                         }
@@ -577,23 +577,23 @@ public class FormItem {
                         if let field = dependency.getDependencyItem().getValue() as? String {
                             if( textValue != field ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Password must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.unmatchPasswordError)
+                                return(false, SFBMessage.unmatchPasswordError)
                             } else {
                                 return(true, nil)
                             }
                         } else {
-                            return(false, VTRMessage.unmatchPasswordError)
+                            return(false, SFBMessage.unmatchPasswordError)
                         }
                     }
                     
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                    return(false, VTRMessage.undefinedDependecyError)
+                    return(false, SFBMessage.undefinedDependecyError)
                 } else {
                     return(true, nil)
                 }
             } else {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid password")
-                return(false, VTRMessage.invalidPasswordError)
+                return(false, SFBMessage.invalidPasswordError)
             }
         }
     }
@@ -607,7 +607,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -615,13 +615,13 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory ) {
             if( textValue.isEmpty ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 if( textValue.isValidFiscalCode() ) {
                     if let dependency = dependence {
@@ -629,7 +629,7 @@ public class FormItem {
                         if( dependency.getType() == .fill ) {
                             if( dependency.getDependencyItem().getValue() == nil ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                                return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                             } else {
                                 return(true, nil)
                             }
@@ -640,30 +640,30 @@ public class FormItem {
                             if let field = dependency.getDependencyItem().getValue() as? String {
                                 if( textValue != field ) {
                                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                    return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                    return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                                 } else {
                                     return(true, nil)
                                 }
                             } else {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                             }
                         }
                         
                         Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                        return(false, VTRMessage.undefinedDependecyError)
+                        return(false, SFBMessage.undefinedDependecyError)
                     } else {
                         return(true, nil)
                     }
                 } else {
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid fiscal code")
-                    return(false, VTRMessage.invalidFiscalCodeError)
+                    return(false, SFBMessage.invalidFiscalCodeError)
                 }
             }
         } else {
             if( !textValue.isEmpty && !textValue.isValidFiscalCode() ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid fiscal code value -> \(currentItemValue)")
-                return(false, VTRMessage.invalidFiscalCodeError)
+                return(false, SFBMessage.invalidFiscalCodeError)
             } else {
                 return(true, nil)
             }
@@ -678,7 +678,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -686,20 +686,20 @@ public class FormItem {
         
         guard let boolValue = currentItemValue as? Bool else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory ) {
             if( !boolValue ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 if let dependency = dependence {
                     // Check if dependency field was filled
                     if( dependency.getType() == .fill ) {
                         if( dependency.getDependencyItem().getValue() == nil ) {
                             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                            return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                            return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                         } else {
                             return(true, nil)
                         }
@@ -710,18 +710,18 @@ public class FormItem {
                         if let field = dependency.getDependencyItem().getValue() as? Bool {
                             if( !field ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                             } else {
                                 return(true, nil)
                             }
                         } else {
                             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                            return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                            return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                         }
                     }
                     
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                    return(false, VTRMessage.undefinedDependecyError)
+                    return(false, SFBMessage.undefinedDependecyError)
                 } else {
                     return(true, nil)
                 }
@@ -740,7 +740,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -748,13 +748,13 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory ) {
             if( textValue.isEmpty ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 if( textValue.isValidPhoneNumber() ) {
                     if let dependency = dependence {
@@ -762,7 +762,7 @@ public class FormItem {
                         if( dependency.getType() == .fill ) {
                             if( dependency.getDependencyItem().getValue() == nil ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                                return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                             } else {
                                 return(true, nil)
                             }
@@ -773,30 +773,30 @@ public class FormItem {
                             if let field = dependency.getDependencyItem().getValue() as? String {
                                 if( textValue != field ) {
                                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                    return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                    return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                                 } else {
                                     return(true, nil)
                                 }
                             } else {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                             }
                         }
                         
                         Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                        return(false, VTRMessage.undefinedDependecyError)
+                        return(false, SFBMessage.undefinedDependecyError)
                     } else {
                         return(true, nil)
                     }
                 } else {
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid phone number -> \(currentItemValue)")
-                    return(false, VTRMessage.invalidPhoneNumberError)
+                    return(false, SFBMessage.invalidPhoneNumberError)
                 }
             }
         } else {
             if( !textValue.isEmpty && !textValue.isValidPhoneNumber() ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Invalid phone number -> \(currentItemValue)")
-                return(false, VTRMessage.invalidPhoneNumberError)
+                return(false, SFBMessage.invalidPhoneNumberError)
             } else {
                 return(true, nil)
             }
@@ -811,7 +811,7 @@ public class FormItem {
         guard let currentItemValue = value else {
             if( isMandatory ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.mandatoryError)
+                return(false, SFBMessage.mandatoryError)
             } else {
                 return(true, nil)
             }
@@ -819,20 +819,20 @@ public class FormItem {
         
         guard let textValue = currentItemValue as? String else {
             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item value type not string")
-            return(false, VTRMessage.stringValueNotFoundError)
+            return(false, SFBMessage.stringValueNotFoundError)
         }
         
         if( isMandatory ) {
             if( textValue.isEmpty ) {
                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item is mandataory")
-                return(false, VTRMessage.invalidPhoneNumberError)
+                return(false, SFBMessage.invalidPhoneNumberError)
             } else {
                 if let dependency = dependence {
                     // Check if dependency field was filled
                     if( dependency.getType() == .fill ) {
                         if( dependency.getDependencyItem().getValue() == nil ) {
                             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item \(dependency.getDependencyItem().getTitle() ?? "unknow") must be filled")
-                            return(false, VTRMessage.dependecyUnfilledError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                            return(false, SFBMessage.dependecyUnfilledError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                         } else {
                             return(true, nil)
                         }
@@ -843,18 +843,18 @@ public class FormItem {
                         if let field = dependency.getDependencyItem().getValue() as? String {
                             if( textValue != field ) {
                                 Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                                return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                                return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                             } else {
                                 return(true, nil)
                             }
                         } else {
                             Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Must be equal to \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                            return(false, VTRMessage.dependecyUnmatchError.replacingOccurrences(of: VTRMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
+                            return(false, SFBMessage.dependecyUnmatchError.replacingOccurrences(of: SFBMessage.FIELD_NAME, with: dependency.getDependencyItem().getTitle() ?? "-"))
                         }
                     }
                     
                     Logger.print(level: .warning, "Error validating \(title ?? "unknow"). Item has dependecy but unable to find dependecy field \(dependency.getDependencyItem().getTitle() ?? "unknow")")
-                    return(false, VTRMessage.undefinedDependecyError)
+                    return(false, SFBMessage.undefinedDependecyError)
                 } else {
                     return(true, nil)
                 }

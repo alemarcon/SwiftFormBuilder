@@ -1,6 +1,6 @@
 //
 //  SFBPasswordRule.swift
-//  VTRFormBuilder
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 28/05/2021.
 //
@@ -9,7 +9,7 @@ import Foundation
 
 class SFBPasswordRule {
     
-    /// Singleton object for VetryaOAuthConf
+    /// Singleton object for SFBPasswordRule
     static let shared: SFBPasswordRule = SFBPasswordRule()
     /// Minimum char for password fields. Default is 2. If number is less than 2 or greater than  _maxPasswordCharNumbers, default value will be setted
     private var _minPasswordCharNumbers: Int = 8
@@ -24,7 +24,7 @@ class SFBPasswordRule {
     /// TRUE if need at least one number, FALSE otherwise.
     private var _number: Bool = false
     
-    /// Default VetryaOAuthConf initializer
+    /// Default SFBPasswordRule initializer
     private init() { }
     
     /// Minimum char for password fields. Default is 2. If number is less than 2 or greater than  _maxPasswordCharNumbers, default value will be setted

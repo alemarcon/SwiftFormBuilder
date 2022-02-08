@@ -1,6 +1,6 @@
 //
 //  String+Extension.swift
-//  VTRFormBuilder
+//  SwiftFormBuilder
 //
 //  Created by Alessandro Marcon on 26/05/2021.
 //
@@ -48,25 +48,25 @@ extension String {
         let _specialChars: String = "(?=.*?[#?!@$%^&*£|)(-_;,=])"
         let _numbers: String = "(?=.*?[0-9])"
         
-        if( VTRPasswordRule.needUppercasedLetter ) {
+        if( SFBPasswordRule.needUppercasedLetter ) {
             regex = _uppercasedLetterRegex
         }
         
-        if( VTRPasswordRule.needLowercasedLetter ) {
+        if( SFBPasswordRule.needLowercasedLetter ) {
             regex = "\(regex)\(_lowercasedLetterRegex)"
         }
         
-        if( VTRPasswordRule.needSpecialChar ) {
+        if( SFBPasswordRule.needSpecialChar ) {
             regex = "\(regex)\(_specialChars)"
         }
         
-        if( VTRPasswordRule.needNumber ) {
+        if( SFBPasswordRule.needNumber ) {
             regex = "\(regex)\(_numbers)"
         }
         
-        regex = "\(regex).{\(VTRPasswordRule.minLength),\(VTRPasswordRule.maxLength)}"
+        regex = "\(regex).{\(SFBPasswordRule.minLength),\(SFBPasswordRule.maxLength)}"
         
-        if( self.count >= VTRPasswordRule.minLength && self.count <= VTRPasswordRule.maxLength ) {
+        if( self.count >= SFBPasswordRule.minLength && self.count <= SFBPasswordRule.maxLength ) {
             //^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*£|)(-;]).{8,}$ // Include at least 1 number
             if( regex.isEmpty ) {
                 return true

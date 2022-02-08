@@ -91,8 +91,8 @@ class ViewController: UIViewController {
         policy.isRequired = true
         
         let linkItem = FormItem(named: "linkItem", valueType: .checkbox)
-            .title("Collegati su vetrya web site", underlined: "vetrya web site")
-            .link( URL(string: "https://www.vetrya.com/it") )
+            .title("Collegati su Google web site", underlined: "Google web site")
+            .link( URL(string: "https://www.google.com") )
             .isMandatory(policy.isRequired)
             .policy(policy)
             .uiProperties(
