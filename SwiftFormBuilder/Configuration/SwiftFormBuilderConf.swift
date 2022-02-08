@@ -18,7 +18,7 @@ public enum LogLevel:String {
 public class SwiftFormBuilderConf {
     /// Current application loglevel
     private var _logLevel: LogLevel = .verbose
-    /// Singleton object for VetryaOAuthConf
+    /// Singleton object for SwiftFormBuilderConf
     static let shared: SwiftFormBuilderConf = SwiftFormBuilderConf()
     /// Default SwiftFormBuilderConf initializer
     private init() { }

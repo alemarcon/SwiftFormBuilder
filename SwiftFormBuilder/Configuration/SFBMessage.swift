@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class VTRMessage {
+public class SFBMessage {
     
     public static let FIELD_NAME = "$FIELD_NAME$"
     
     //MARK: - Public instance
     /// Singleton object for VetryaOAuthConf
-    static let shared: VTRMessage = VTRMessage()
+    static let shared: SFBMessage = SFBMessage()
     
     //MARK: - Private properties
     /// Message to show during error validation for mandatory item
